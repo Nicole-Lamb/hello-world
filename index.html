@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>My Garden Story</title>
 </head>
 <body>
@@ -23,26 +23,65 @@
     </header>
     <main>
         <div class="welcome-div">
-            <h2>Welcome To My Garden!</h2>
+            <script src = "app.js"></script>
+            <h2>The Story So Far...</h2>
             <p>
-                When I first got into gardening in my twenties, I didn't know what I was doing, but that didn't stop me from trying! Of course, I could've researched what to do, but who has time for that? So I planted some seeds and wasn't very successful. Now flash forward to now, I have a porch garden that I decided to finally invest in. I bought local plants and ones that specifically worked for the area. I started using the app Picture This to help track my plants and get tips to when they get sick. And they definitely got sick. So check out more of my story in the links below, as well as Tips and Tricks. If I can have a blooming garden, so can you!
+                When I got the itch to start gardening in my twenties, I didn't know what I was doing, 
+                but that didn't stop me from trying! Of course, I could've researched what to do, but who 
+                has time for that? So I planted some seeds and wasn't very successful. Flash forward 
+                to now, I have a porch garden that I decided to finally invest in. I bought local plants 
+                and ones that specifically worked for the area. I started using the app Picture This to 
+                help track my plants and get tips to when they get sick. And they definitely got sick. 
+                So check out more of my story in the links below, as well as Tips and Tricks. If I can 
+                have a blooming garden, so can you!
             </p>
         </div>
         <div class="article-div">
             <article>
                 <h3>My Story</h3>
-                <img src="images/BlackTrumpet.jpg" alt="A Black Trumpet flower close up blood red and maroon in color">
-                <p>Read about My story... <a href="MyStory.html">Here</a>.</p>
+                <img src="images/BlackTrumpet.jpg" alt="A Black Trumpet flower close up, blood red and maroon in color">
+                <p>Read about My story... <a href="My-Story.html">Here</a>.</p>
+                <button id="story-button">Tell Your Story</button>
             </article>
-            <article>
+
+            <article id="tips-section">
                 <h3>Tips + Tricks</h3>
-                <img src="images/BouquetVase.jpg" alt="A long shot glass with yellow flowers, pansis ">
+                <img src="images/BouquetVase.jpg" alt="A long shot glass with yellow flowers, pansies.">
                 <p>Learn Tips + Tricks... <a href="Tips-Tricks.html">Here</a>.</p>
+                <button id="tips-button">Search Tips</button>
+                    <script>
+                        let newParagraph = null;
+
+                        function onButtonClick() {
+                            const userInput = prompt('What would you like to search for?');
+                            const outputInfo = document.getElementById('tips-section');
+
+                            if (newParagraph) {
+                                outputInfo.removechild(newParagraph);
+                            }
+
+                            if (userInput !== null && userInput !== ''){
+                                newParagraph = document.createElement('p');
+                                newParagraph.textContent = 'You searched for ' + userInput;
+
+                                outputInfo.appendChild(newParagraph);
+                            } else {
+                                nullParagraph = document.createElement('p');
+                                nullParagraph.textContent = 'Nothing Found';
+
+                                outputInfo.appendChild(nullParagraph);
+                            }
+                        }
+                        const tipsButton = document.getElementById('tips-button');
+                        tipsButton.addEventListener('click', onButtonClick);
+                    </script>
             </article>
-            <article>
+
+            <article id="gallery-section">
                 <h3>Picture Gallery</h3>
-                <img src="images/KewBlue.jpg" alt="Multiple plants showing my garden">
+                <img src="images/KewBlue.jpg" alt="A Kew Blue flower close up, deep indigo in color">
                 <p>Check out the Picture Gallery... <a href="Picture-Gallery.html">Here</a>.</p>
+                <button id="gallery-button">Add Your Plant</button>
             </article>
         </div>
     </main>
