@@ -51,13 +51,18 @@
                 <button id="tips-button">Search Tips</button>
                     <script>
                         let newParagraph = null;
+                        let nullParagraph = null;
 
                         function onButtonClick() {
                             const userInput = prompt('What would you like to search for?');
                             const outputInfo = document.getElementById('tips-section');
 
-                            if (newParagraph) {
-                                outputInfo.removechild(newParagraph);
+                            if (newParagraph || nullParagraph) {
+                                if (newParagraph){
+                                    outputInfo.removeChild(newParagraph);
+                                } else {
+                                    outputInfo.removeChild(nullParagraph);
+                                }
                             }
 
                             if (userInput !== null && userInput !== ''){
