@@ -85,6 +85,10 @@ button {
     color: white;
 }
 
+.hidden {
+    display: none;
+}
+
 .footer-background-img {
     position: relative;
     padding-top: 50px;

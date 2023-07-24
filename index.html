@@ -42,6 +42,15 @@
                 <img src="images/BlackTrumpet.jpg" alt="A Black Trumpet flower close up, blood red and maroon in color">
                 <p>Read about My story... <a href="My-Story.html">Here</a>.</p>
                 <button id="story-button">Tell Your Story</button>
+                <p id="coming-soon-story" class="hidden">Coming Soon!</p>
+                <script>
+                    function onButtonClick() {
+                        const comingSoonText = document.getElementById('coming-soon-story');
+                        comingSoonText.classList.remove('hidden');
+                    }
+                    const storyButton = document.getElementById('story-button');
+                    storyButton.addEventListener('click', onButtonClick);
+                </script>
             </article>
 
             <article id="tips-section">
@@ -87,6 +96,15 @@
                 <img src="images/KewBlue.jpg" alt="A Kew Blue flower close up, deep indigo in color">
                 <p>Check out the Picture Gallery... <a href="Picture-Gallery.html">Here</a>.</p>
                 <button id="gallery-button">Add Your Plant</button>
+                <p id="coming-soon-gallery" class="hidden">Coming Soon!</p>
+                <script>
+                    function onButtonClick() {
+                        const comingSoonText = document.getElementById('coming-soon-gallery');
+                        comingSoonText.classList.remove('hidden');
+                    }
+                    const galleryButton = document.getElementById('gallery-button');
+                    galleryButton.addEventListener('click', onButtonClick);
+                </script>
             </article>
         </div>
     </main>
