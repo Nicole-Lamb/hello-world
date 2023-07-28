@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>My Garden Story</title>
+    <script src = "app.js"></script>
 </head>
 <body>
     <header>
@@ -23,7 +24,10 @@
     </header>
     <main>
         <div class="welcome-div">
-            <script src = "app.js"></script>
+            <script> 
+                const theirName = getUserName();
+                welcomeMessage(theirName); 
+            </script>
             <h2>The Story So Far...</h2>
             <p>
                 When I got the itch to start gardening in my twenties, I didn't know what I was doing, 
@@ -62,32 +66,8 @@
                         let newParagraph = null;
                         let nullParagraph = null;
 
-                        function onButtonClick() {
-                            const userInput = prompt('What would you like to search for?');
-                            const outputInfo = document.getElementById('tips-section');
-
-                            if (newParagraph || nullParagraph) {
-                                if (newParagraph){
-                                    outputInfo.removeChild(newParagraph);
-                                } else {
-                                    outputInfo.removeChild(nullParagraph);
-                                }
-                            }
-
-                            if (userInput !== null && userInput !== ''){
-                                newParagraph = document.createElement('p');
-                                newParagraph.textContent = 'You searched for ' + userInput;
-
-                                outputInfo.appendChild(newParagraph);
-                            } else {
-                                nullParagraph = document.createElement('p');
-                                nullParagraph.textContent = 'Nothing Found';
-
-                                outputInfo.appendChild(nullParagraph);
-                            }
-                        }
                         const tipsButton = document.getElementById('tips-button');
-                        tipsButton.addEventListener('click', onButtonClick);
+                        tipsButton.addEventListener('click', onTipsButtonClick);
                     </script>
             </article>
 
