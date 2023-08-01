@@ -7,15 +7,29 @@ let idString = '';
 //Initial User Name prompt to then welcome them to the page
 function getUserName() {
     userName = prompt("What's your name?");
+    while (userName == null || userName == ''){
+            if (userName == null){
+                userName = confirm("Would you like to skip this step?");
+                userName = '';
+                return userName;
+            } else {
+                userName = prompt("Please provide a name.");
+            } 
+    }
     return userName;
 }
 
 //the welcome message that uses getUserName to personalize the page for the user
 function welcomeMessage(userName) {
-    document.write("Welcome to my garden, " + userName + "!");
+    if (userName !== null && userName !== '') {
+        document.write("Welcome to my garden, " + userName + "!");
+    } else {
+        document.write("Welcome to my garden!");
+    }    
 }
 
-//the coming soon function used in MyStory and PictureGallery
+//the coming soon function used in MyStory and PictureGallery (commented out for now)
+
 //TODO: Add functionality to each page and move this button to each page as applicable.
 // function onButtonClick(idString) {
 //     const comingSoonText = document.getElementById(idString);
@@ -58,4 +72,11 @@ function onTipsButtonClick() {
 function searchInput() {
     userInput = prompt("What would you like to search for?");
     return userInput;
+}
+
+function rateThisPage(){
+    let rating = prompt("What do you rate this page on a scale of 1-5?");
+    for (let i = 0; i < rating; i++) {
+       document.write('<img src="images/Frolic.gif" class="rating-img" alt="Homer Simpson frolicing in a meadow gif">');
+    }
 }

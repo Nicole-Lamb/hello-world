@@ -75,6 +75,7 @@ article img {
     text-align: center;
     padding-right: 50px;
     padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 button {
@@ -94,6 +95,17 @@ button {
     padding-top: 50px;
     width: 100%;
     opacity: 0.8;
+}
+
+.rating-img {
+    width: 100px;
+    display: inline;
+    padding-inline: 10px;
+}
+
+.rate-p {
+    padding: 5%;
+    background-color: #DFD7BF;
 }
 
 footer p {
